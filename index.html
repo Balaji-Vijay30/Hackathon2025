@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decentralized Digital Identity & Credential Vault</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Decentralized Digital Identity & Credential Vault</h1>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section">
+    <h2>Secure. Private. Self-Sovereign.</h2>
+    <p>
+      Traditional identity systems like DigiLocker and centralized databases store personal credentials on government servers, which can lead to data breaches, privacy loss, and lack of control.
+    </p>
+    <p>
+      Our project introduces a <strong>blockchain-based Decentralized Identity and Credential Vault</strong> that uses <strong>Decentralized Identifiers (DIDs)</strong> and <strong>Verifiable Credentials (VCs)</strong> to give users full control over their digital identity.
+    </p>
+    <button onclick="learnMore()">Learn More</button>
+  </section>
+
+  <section id="features" class="section hidden">
+    <h2>Key Features</h2>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>🔒 Secure Ownership</h3>
+        <p>Your identity keys are stored with you — not on centralized servers.</p>
+      </div>
+      <div class="feature">
+        <h3>🧾 Verifiable Credentials</h3>
+        <p>Share only what’s needed using cryptographic proofs for trust and privacy.</p>
+      </div>
+      <div class="feature">
+        <h3>🌐 Interoperability</h3>
+        <p>Works across multiple platforms and digital ecosystems using open standards.</p>
+      </div>
+      <div class="feature">
+        <h3>🛡 User Privacy</h3>
+        <p>No personal data is exposed or stored by any third party.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section hidden">
+    <h2>Contact Us</h2>
+    <p>If you’d like to know more about our Decentralized Digital Identity project, feel free to reach out.</p>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="response"></p>
+  </section>
+
+  <footer>
+    <p>© 2025 DID Vault | Designed by Gowth</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
