@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Decentralized Digital Identity & Credential Vault</title>
+  <title>PROSECURE</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Decentralized Digital Identity & Credential Vault</h1>
+    <h1>PRO-SECURE</h1>
     <nav>
       <ul>
         <li><a href="#home" class="active">Home</a></li>
@@ -18,17 +18,74 @@
     </nav>
   </header>
 
-  <section id="home" class="section">
-    <h2>Secure. Private. Self-Sovereign.</h2>
-    <p>
-      Traditional identity systems like DigiLocker and centralized databases store personal credentials on government servers, which can lead to data breaches, privacy loss, and lack of control.
-    </p>
-    <p>
-      Our project introduces a <strong>blockchain-based Decentralized Identity and Credential Vault</strong> that uses <strong>Decentralized Identifiers (DIDs)</strong> and <strong>Verifiable Credentials (VCs)</strong> to give users full control over their digital identity.
-    </p>
-    <button onclick="learnMore()">Learn More</button>
+<!-- Home Section -->
+<section id="home" class="section">
+  <h2>Secure. Private. Self-Sovereign.</h2>
+  <p>
+    Traditional identity systems like DigiLocker and centralized databases store personal credentials on government servers, which can lead to data breaches, privacy loss, and lack of control.
+  </p>
+  <p>
+    Our project introduces a <strong>blockchain-based Decentralized Identity and Credential Vault</strong> that uses <strong>Decentralized Identifiers (DIDs)</strong> and <strong>Verifiable Credentials (VCs)</strong> to give users full control over their digital identity.
+  </p>
+
+  <!-- Sign In / Sign Up Buttons Only -->
+  <div id="homeButtons">
+    <button onclick="showSignUp()">Sign Up</button>
+    <button onclick="showSignIn()">Sign In</button>
+  </div>
+
+  <!-- User Actions appear only after sign in -->
+  <div id="userActions" class="hidden">
+    <button onclick="showSection('addDetails')">Add Your Details</button>
+    <button onclick="showSection('documentVault')">Document Vault</button>
+    <button onclick="signOut()">Sign Out</button>
+  </div>
+</section>
+
+
+  <!-- Sign Up Section -->
+  <section id="signup" class="section hidden">
+    <h2>Sign Up</h2>
+    <form id="signupForm">
+      <input type="text" id="signupUsername" placeholder="Username" required>
+      <input type="password" id="signupPassword" placeholder="Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <span class="link" onclick="showSignIn()">Sign In</span></p>
   </section>
 
+  <!-- Sign In Section -->
+  <section id="signin" class="section hidden">
+    <h2>Sign In</h2>
+    <form id="signinForm">
+      <input type="text" id="signinUsername" placeholder="Username" required>
+      <input type="password" id="signinPassword" placeholder="Password" required>
+      <button type="submit">Sign In</button>
+    </form>
+    <p>Don't have an account? <span class="link" onclick="showSignUp()">Sign Up</span></p>
+  </section>
+
+  <!-- Add Details Section -->
+  <section id="addDetails" class="section hidden">
+    <h2>Add Your Details</h2>
+    <form id="detailsForm">
+      <input type="text" id="fullName" placeholder="Full Name" required>
+      <input type="email" id="userEmail" placeholder="Email" required>
+      <input type="text" id="dob" placeholder="Date of Birth (DD/MM/YYYY)" required>
+      <button type="submit">Save Details</button>
+    </form>
+    <button id="viewDetailsBtn">View Details</button>
+    <p><span class="link" onclick="showSection('home')">Back to Home</span></p>
+  </section>
+
+  <!-- View Details Section -->
+  <section id="viewDetails" class="section hidden">
+    <h2>Your Details</h2>
+    <div id="detailsDisplay" class="details-card"></div>
+    <p><span class="link" onclick="showSection('addDetails')">Back</span></p>
+  </section>
+
+  <!-- Features Section -->
   <section id="features" class="section hidden">
     <h2>Key Features</h2>
     <div class="features-grid">
@@ -51,6 +108,7 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="section hidden">
     <h2>Contact Us</h2>
     <p>If you’d like to know more about our Decentralized Digital Identity project, feel free to reach out.</p>
@@ -63,10 +121,31 @@
     <p id="response"></p>
   </section>
 
+  <!-- Document Vault Section -->
+<section id="documentVault" class="section hidden">
+  <h2>Document Vault</h2>
+  <p>Upload and view your personal documents securely.</p>
+
+  <!-- Upload Form -->
+  <form id="uploadForm">
+    <input type="file" id="docFile" required>
+    <input type="text" id="docName" placeholder="Document Name" required>
+    <button type="submit">Upload Document</button>
+  </form>
+
+  <!-- Display uploaded documents -->
+  <h3>Your Documents:</h3>
+  <div id="docList" class="features-grid"></div>
+
+  <p><span class="link" onclick="showSection('home')">Back to Home</span></p>
+</section>
+
+
   <footer>
-    <p>© 2025 DID Vault | Designed by Gowth</p>
+    <p>© 2025 PROSECURE | Designed by Hackoholics</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
